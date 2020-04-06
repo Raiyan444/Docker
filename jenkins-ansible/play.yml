@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+    - name: Executing command from ansible!
+      shell: w
+    - name: Debug the Message
+      debug:
+        msg: "{{ Output }}" 

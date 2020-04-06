@@ -1,0 +1,53 @@
+version: "3"
+
+services:
+
+  jenkins:
+    image: jenkins-ansible
+    build:
+      context: jenkins-ansible
+    container_name: CJE
+    restart: always
+    ports:
+      - "8080:8080"
+    volumes:
+      - "$PWD/jenkins_home:/var/jenkins_home"
+    networks:
+      - technet
+  
+  remote_host:
+    image: remote-centos
+    build:
+      context: centos
+    container_name: remote_host
+    restart: always
+    volumes:
+      - "$PWD/script-s3.sh:/tmp/script-s3.sh"
+    networks:
+      - technet
+    depends_on:
+      - jenkins
+
+  db_host:
+    image: mysql:5.7
+    container_name: db
+    environment:
+      - "MYSQL_ROOT_PASSWORD=mysql@123"
+    volumes:
+      - "$PWD/mysql_data:/var/lib/mysql" 
+    networks:
+      - technet
+
+  web_host:
+    container_name: web
+    image: ansible-web
+    build:
+      context: jenkins-ansible/web
+    restart: always
+    ports:
+      - "80:80"
+    networks:
+      - technet
+
+networks:
+  technet:    

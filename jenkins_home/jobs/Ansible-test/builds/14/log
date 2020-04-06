@@ -1,0 +1,22 @@
+Started by user [8mha:////4HkiS1MviISPR6CjuNGwPzskP+uj0Y/invJ1tNZsK7qgAAAAmB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAy+EgYe/dLi1CL9osTMysQ8AIpb9HvBAAAA[0mMOHAMED RAIYAN
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/Ansible-test
+[Ansible-test] $ ansible-playbook /var/jenkins_home/ansible/play.yml -i /var/jenkins_home/ansible/hosts -f 5 -e "Output='Hello World!'"
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+[0;32mok: [test1][0m
+[0;32m[0m
+TASK [Executing command from ansible!] *****************************************
+[0;33mchanged: [test1][0m
+[0;33m[0m
+TASK [Debug the Message] *******************************************************
+[0;32mok: [test1] => {[0m
+[0;32m    "msg": "Hello World!"[0m
+[0;32m}[0m
+[0;32m[0m
+PLAY RECAP *********************************************************************
+[0;33mtest1[0m                      : [0;32mok=3   [0m [0;33mchanged=1   [0m unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Finished: SUCCESS

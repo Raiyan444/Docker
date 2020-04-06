@@ -1,0 +1,13 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<fingerprint>
+  <timestamp>2020-04-04 07:16:15.937 UTC</timestamp>
+  <md5sum>424d6d63c980870a8ea88757a3fd297a</md5sum>
+  <fileName>Credential id=MYSQL_PASSWORD name=MYSQL_PASSWORD</fileName>
+  <usages>
+    <entry>
+      <string>Mysql-backup</string>
+      <ranges>2-15</ranges>
+    </entry>
+  </usages>
+  <facets/>
+</fingerprint>
