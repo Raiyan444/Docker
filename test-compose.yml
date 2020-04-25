@@ -1,0 +1,36 @@
+version: "3.3"
+services:
+  jenkins:
+    image: jenkins-ansible
+    build:
+      context: jenkins-ansible
+    container_name: jenkins
+    ports:
+      - "8080:8080"
+    volumes:
+      - $PWD/jenkins_home:/var/jenkins_home
+    networks:
+      - testnet
+   
+  ubuntu_01:
+    image: custom-ubuntu
+    build:
+      context: Ubuntu
+    container_name: ubuntu_01
+    volumes:
+      - $PWD/ubuntu_home01:/tmp/ubuntu_home
+    networks:
+      - testnet
+
+  ubuntu_02:
+    image: custom-ubuntu
+    build:
+      context: Ubuntu
+    container_name: ubuntu_02
+    volumes:
+      - $PWD/ubuntu_home02:/tmp/ubuntu_home
+    networks:
+      - testnet          
+
+networks:
+  testnet:
