@@ -1,12 +1,13 @@
 #!/bin/bash
 
 # COPY JAR to build location
-cp java-app/target/*.jar jenkins/build/
+WORKSPACE=/home/ubuntu/jenkins-data/jenkins_home/workspace/pipeline-docker
+cp $WORKSPACE/java-app/target/*.jar $WORKSPACE/jenkins/build/
 
 echo "********************************"
 echo "*******BUILDING IMAGE***********"
 echo "********************************"
 
-docker-compose -f jenkins/build/docker-compose-build.yml build
+docker-compose -f $WORKSPACE/jenkins/build/docker-compose-build.yml build
 
 
