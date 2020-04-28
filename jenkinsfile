@@ -18,9 +18,9 @@ pipeline {
            }
       post {
          success {
-            //archiveArtifacts artifacts: './java-app/target/*.jar', fingerprint: true
-            //WORKSPACE=/home/ubuntu/jenkins-data/jenkins_home/workspace/pipeline-docker
-            archiveArtifacts artifacts: '/home/ubuntu/jenkins-data/jenkins_home/workspace/pipeline-docker/java-app/target/*.jar', fingerprint: true
+            //archiveArtifacts artifacts: 'java-app/target/*.jar', fingerprint: true
+            //WORKSPACE=/var/jenkins_home/workspace/pipeline-docker
+            archiveArtifacts artifacts: '/var/jenkins_home/workspace/pipeline-docker/java-app/target/*.jar', fingerprint: true
         }
       }
     }
