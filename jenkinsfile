@@ -17,15 +17,25 @@ pipeline {
            ''' 
            }
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 269645e3dabca7c47695f86e5f90a295a5c5f393
     stage('Test'){
       steps{
 
         sh './jenkins/test/mvn.sh mvn test'
 
+<<<<<<< HEAD
            } 
     }
 
+=======
+           }
+    }
+    
+>>>>>>> 269645e3dabca7c47695f86e5f90a295a5c5f393
     stage('Push'){
       steps{
 
