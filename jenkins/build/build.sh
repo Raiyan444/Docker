@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # COPY JAR to build location
-WORKSPACE=/home/ubuntu/jenkins-data/jenkins_home/workspace/pipeline-docker
+WORKSPACE=/var/jenkins_home/workspace/pipeline-docker
 cp $WORKSPACE/java-app/target/*.jar $WORKSPACE/jenkins/build/
 
 echo "********************************"
