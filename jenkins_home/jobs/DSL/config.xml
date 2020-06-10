@@ -1,0 +1,63 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <javaposse.jobdsl.plugin.ExecuteDslScripts plugin="job-dsl@1.77">
+      <scriptText>job(&apos;dsl-job&apos;){
+  
+  description(&quot;This just a DSL job testing..&quot;)
+  
+  parameters {
+     
+     choiceParam(&apos;Options&apos;, [&apos;Option1 (default)&apos;, &apos;Option2&apos;, &apos;Option3&apos;])
+     stringParam(&apos;Name&apos;, defaultValue=&apos;World&apos;, description=&apos;This is a string&apos;)
+     booleanParam(&apos;Flags&apos;, true)
+  }
+  
+  scm{
+    git(&apos;https://github.com/Raiyan444/ping.git&apos;, &apos;master&apos;) 
+  }
+  
+  triggers{
+    cron(&apos;* 2 * * *&apos;)
+  }
+  
+  steps{
+   shell(&quot;&quot;&quot; 
+         echo &apos;Hello World!&apos;
+         echo &apos;Running script&apos;
+         &quot;&quot;&quot;)
+  }
+  
+  publishers {
+    mailer(&apos;mohamedraiyan@zoho.com&apos;, true, true)
+    }
+  
+  
+}</scriptText>
+      <usingScriptText>true</usingScriptText>
+      <sandbox>false</sandbox>
+      <ignoreExisting>false</ignoreExisting>
+      <ignoreMissingFiles>false</ignoreMissingFiles>
+      <failOnMissingPlugin>false</failOnMissingPlugin>
+      <failOnSeedCollision>false</failOnSeedCollision>
+      <unstableOnDeprecation>false</unstableOnDeprecation>
+      <removedJobAction>IGNORE</removedJobAction>
+      <removedViewAction>IGNORE</removedViewAction>
+      <removedConfigFilesAction>IGNORE</removedConfigFilesAction>
+      <lookupStrategy>JENKINS_ROOT</lookupStrategy>
+    </javaposse.jobdsl.plugin.ExecuteDslScripts>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>

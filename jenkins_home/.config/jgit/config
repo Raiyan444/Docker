@@ -1,0 +1,9 @@
+[filesystem "6afcced2143e|Oracle Corporation|1.8.0_242|/dev/xvda1"]
+	timestampResolution = 2001 microseconds
+	minRacyThreshold = 5558 microseconds
+[filesystem "15f7a5c144ec|Oracle Corporation|1.8.0_242|/dev/xvda1"]
+	timestampResolution = 5001 microseconds
+	minRacyThreshold = 0 nanoseconds
+[filesystem "42e435d25549|Oracle Corporation|1.8.0_242|/dev/xvda1"]
+	timestampResolution = 4001 microseconds
+	minRacyThreshold = 0 nanoseconds

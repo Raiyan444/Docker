@@ -1,0 +1,14 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<slave>
+  <name>Ubuntu_02</name>
+  <description></description>
+  <remoteFS>/tmp/</remoteFS>
+  <numExecutors>1</numExecutors>
+  <mode>NORMAL</mode>
+  <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
+  <launcher class="hudson.slaves.CommandLauncher" plugin="command-launcher@1.4">
+    <agentCommand>ssh creative@ubuntu_02 java -jar /tmp/slave.jar</agentCommand>
+  </launcher>
+  <label>Ubuntu_02</label>
+  <nodeProperties/>
+</slave>

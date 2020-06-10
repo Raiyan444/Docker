@@ -1,0 +1,25 @@
+---
+  - hosts: web
+    become: true
+    tasks:
+      - name: install nginx
+        apt: name=nginx state=present update_cache=yes
+    
+#      - name: Checking nginx status
+#        shell: pidof nginx | wc -l
+#        register: result
+
+      - name: Starting nginx service..
+        command: /etc/init.d/nginx start 
+
+      - name: check port is up
+        wait_for: port=80 state=started timeout=2
+
+#      - name: Debug the msg
+#        debug:
+#          var: result
+        
+
+    handlers:
+      - name: start nginx
+        command: /etc/init.d/nginx start 

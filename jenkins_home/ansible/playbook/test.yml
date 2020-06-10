@@ -1,0 +1,10 @@
+---
+  - hosts: localhost
+    gather_facts: false
+    tasks:
+      # default Python here
+      - shell: echo hello
+      - set_fact:
+          ansible_python_interpreter: /usr/bin/python2.7
+      # modified Python here
+      - shell: echo hello

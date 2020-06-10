@@ -1,0 +1,12 @@
+---
+  - hosts: lb
+    become: true
+    tasks:
+      - name: install apache 
+        apt: name=apache2 state=latest update_cache=yes
+    
+      - name: Ensure apache is started
+        service: name=apache2 state=started enabled=yes
+
+      - name: check the port is listening
+        wait_for: port=80 state=started timeout=2

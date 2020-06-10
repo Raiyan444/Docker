@@ -1,8 +1,23 @@
-Started at Mon Apr 06 13:52:32 UTC 2020
+Started at Wed Jun 10 15:07:17 UTC 2020
 Processing Ansible-test
 Offering Ansible-test to Project Build Discarder
+Processing DSL
+Offering DSL to Project Build Discarder
+Processing dsl-job
+Offering dsl-job to Project Build Discarder
+Processing jenkinfile
+Offering jenkinfile to Project Build Discarder
 Processing Mysql-backup
 Offering Mysql-backup to Project Build Discarder
+Processing parameterise_job
+Offering parameterise_job to Project Build Discarder
+Processing pipeline-docker
+Offering pipeline-docker to Project Build Discarder
+pipeline-docker accepted by Project Build Discarder
+Processing Test
+Offering Test to Project Build Discarder
 Processing Test-job
 Offering Test-job to Project Build Discarder
-Finished at Mon Apr 06 13:52:32 UTC 2020. 9ms
+Processing multi-pipline/master
+Offering multi-pipline/master to Project Build Discarder
+Finished at Wed Jun 10 15:07:17 UTC 2020. 620ms

@@ -185,27 +185,6 @@
   right: 0;
   z-index: 2;
 }
-#jenkins .jenkins-config table .bottom-sticker .yui-button.primary button,
-#jenkins .jenkins-config table #bottom-sticker .yui-button.primary button {
-  background: #478;
-  border-color: #356;
-}
-#jenkins .jenkins-config table .bottom-sticker .yui-button.yui-button-disabled button,
-#jenkins .jenkins-config table #bottom-sticker .yui-button.yui-button-disabled button {
-  background: #eee;
-  border-color: #ccc;
-  color: #ccc;
-}
-#jenkins .jenkins-config table .bottom-sticker .yui-button,
-#jenkins .jenkins-config table #bottom-sticker .yui-button {
-  margin-right: 10px;
-}
-#jenkins .jenkins-config table .bottom-sticker .yui-button button,
-#jenkins .jenkins-config table #bottom-sticker .yui-button button {
-  padding: 5px 20px;
-  background: #cde;
-  border-color: #69c;
-}
 #jenkins .jenkins-config table .section-header {
   margin: 30px 0px 5px -10px;
   font-size: 1.25rem;
@@ -236,7 +215,6 @@
 #jenkins .jenkins-config table td textarea.setting-input {
   display: block;
 }
-#jenkins .jenkins-config table td .yui-button button,
 #jenkins .jenkins-config table td input[type='email'].setting-input,
 #jenkins .jenkins-config table td input[type='password'].setting-input,
 #jenkins .jenkins-config table td input[type='text'].setting-input {
@@ -246,13 +224,6 @@
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-}
-#jenkins .jenkins-config table td .yui-button button {
-  padding: 0 10px;
-  box-sizing: content-box;
-}
-#jenkins .jenkins-config table td .yui-button button.hetero-list-add {
-  padding-right: 25px;
 }
 #jenkins .jenkins-config table td select:not([multiple]) {
   height: 2.25em;
@@ -352,6 +323,8 @@
   line-height: 12px !important;
   display: inline-block;
   font-size: 8px;
+  min-width: 0;
+  min-height: 0;
 }
 #jenkins .jenkins-config table .repeatable-delete button:focus,
 #jenkins .jenkins-config table .repeatable-delete button:hover {

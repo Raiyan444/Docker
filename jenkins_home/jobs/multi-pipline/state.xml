@@ -1,0 +1,23 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<jenkins.branch.MultiBranchProject_-State plugin="branch-api@2.5.5">
+  <sourceActions>
+    <entry>
+      <string>3c7b9ded-2786-47d9-8461-4b2773e6d7a8</string>
+      <list>
+        <org.jenkinsci.plugins.github__branch__source.GitHubRepoMetadataAction plugin="github-branch-source@2.6.0"/>
+        <jenkins.scm.api.metadata.ObjectMetadataAction plugin="scm-api@2.6.3">
+          <objectDescription>Dockerised Java based application</objectDescription>
+        </jenkins.scm.api.metadata.ObjectMetadataAction>
+        <org.jenkinsci.plugins.github__branch__source.GitHubLink plugin="github-branch-source@2.6.0">
+          <iconClassName>icon-github-repo</iconClassName>
+          <url>https://github.com/Raiyan444/pipeline-maven</url>
+        </org.jenkinsci.plugins.github__branch__source.GitHubLink>
+        <org.jenkinsci.plugins.github__branch__source.GitHubDefaultBranch plugin="github-branch-source@2.6.0">
+          <repoOwner>Raiyan444</repoOwner>
+          <repository>pipeline-maven</repository>
+          <defaultBranch>master</defaultBranch>
+        </org.jenkinsci.plugins.github__branch__source.GitHubDefaultBranch>
+      </list>
+    </entry>
+  </sourceActions>
+</jenkins.branch.MultiBranchProject_-State>

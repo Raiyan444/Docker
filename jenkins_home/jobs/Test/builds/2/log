@@ -1,0 +1,322 @@
+Started by user [8mha:////4HkiS1MviISPR6CjuNGwPzskP+uj0Y/invJ1tNZsK7qgAAAAmB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAy+EgYe/dLi1CL9osTMysQ8AIpb9HvBAAAA[0mMOHAMED RAIYAN
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/Test
+[SSH] script:
+
+echo "$(hostname -f)"
+echo "************************"
+cat /etc/haproxy/haproxy.cfg
+
+
+[SSH] executing...
+e2e-52-22.e2enetworks.net.in
+************************
+global
+        log /dev/log            local0
+        log /dev/log            local1 notice
+        chroot /var/lib/haproxy
+        user haproxy
+        group haproxy
+        daemon
+        #debug
+        stats socket /var/run/haproxy.sock mode 0666 level operator
+        maxconn 10000
+        tune.ssl.default-dh-param 2048
+
+defaults
+        log     global
+        mode    http
+        option  httplog
+        option  dontlognull
+        option  redispatch
+        timeout connect 8000ms
+        timeout client 600s
+        timeout server 600s
+        errorfile 400 /etc/haproxy/errors/400.http
+        errorfile 403 /etc/haproxy/errors/403.http
+        errorfile 408 /etc/haproxy/errors/408.http
+        errorfile 500 /etc/haproxy/errors/500.http
+        errorfile 502 /etc/haproxy/errors/502.http
+        errorfile 503 /etc/haproxy/errors/503.http
+        errorfile 504 /etc/haproxy/errors/504.http
+        maxconn 10000
+
+# Redirect 80 to 443
+# listen http :80
+# redirect location https://www.example.com
+# frontend http-in-stud
+# bind *:8000 accept-proxy
+# default_backend servers
+
+frontend https-in
+        bind 0.0.0.0:80
+	#default_backend bad_backend
+	acl host_monit       hdr(host) -m end -i dymmymonit.kishanshop.com
+	#
+	redirect scheme https if !{ hdr(Host) -i dymmymonit.kishanshop.com } !{ ssl_fc }
+	redirect scheme http if { hdr(Host) -i dummymonit.kishanshop.com } { ssl_fc }
+        # Distinguish between secure and insecure requests
+        #acl letsencrypt-acl          hdr(host) -m end -i kishanshop.com
+        #acl letsencrypt-acl          hdr(host) -m end -i auromine.com
+        #acl letsencrypt-acl          hdr(host) -m end -i auromine.cloud
+        #acl letsencrypt-acl          hdr(host) -m end -i kishanrationshop.com 
+        #acl letsencrypt-acl          hdr(host) -m end -i aurominepos.com 
+        #acl letsencrypt-acl          hdr(host) -m end -i auromine.in 
+        #acl letsencrypt-acl          hdr(host) -m end -i auromine.co.in 
+        #acl letsencrypt-acl          hdr(host) -m end -i auromine.net 
+        #acl letsencrypt-acl          hdr(host) -m end -i kishanrationmart.com 
+        #redirect prefix http://www.auromine.com code 301 if { hdr(host) -i monit.kishanshop.com }
+	use_backend stats if host_monit
+	#
+        option http-buffer-request
+        timeout http-request 10s
+acl letsencrypt-acl path_beg /.well-known/acme-challenge/
+use_backend letsencrypt-backend if letsencrypt-acl
+	#
+	#
+        bind 0.0.0.0:443 ssl crt /etc/haproxy/certs/LE-cert-auromine-cloud.pem crt /etc/haproxy/certs/LE-cert-auromine-co-in.pem crt /etc/haproxy/certs/LE-cert-auromine.pem crt /etc/haproxy/certs/LE-cert-aurominepos.pem crt /etc/haproxy/certs/LE-cert-auromine-in.pem crt /etc/haproxy/certs/LE-cert-auromine-net.pem no-sslv3 ciphers ALL:!ADH:!EXP:!LOW:!RC2:!RC4:!3DES:!SEED:!AECDH:!aNULL:!SSLV2:+HIGH:+MEDIUM
+	#
+        acl secure dst_port eq 443
+        reqadd X-Forwarded-Proto:https
+        reqadd X-Forwarded-Port:443
+        # Redirect of all traffic from HTTP to HTTPS
+	# Redirect scheme https code 301 if !host_moodle
+        redirect scheme https if !{ ssl_fc } !letsencrypt-acl !host_monit
+        # HTTP-to-HTTPS redirect
+        # Forcing everything to HTTPS, This tells HAProxy to send a header back to all users' browsers telling the browsers that
+        # they should use only HTTPS for your web site and for all other sites on the same parent domain.
+        http-response set-header Strict-Transport-Security max-age=16000000;\ includeSubDomains;\ preload;
+        # Mark all cookies as secure if sent over SSL
+        rsprep ^Set-Cookie:\ (.*) Set-Cookie:\ \1;\ Secure if secure
+        # Add the HSTS header with a 6 months max-age
+        #rspadd Strict-Transport-Security:\ max-age=16000000 if secure
+
+#acl dstport1 dst_port 2812
+
+# All Auromine And Customer Sites Below
+	#
+	acl is_root path -i /
+	#acl tomcat_path   path_beg /AMSRetail
+	#acl tomcat_path   path_beg /KRDCSchemaGen
+	#
+	acl office_ip1 src 122.165.81.145/32 182.76.134.178/32 14.143.32.154/32
+	#
+	#
+	acl host_aurominepos1	hdr(host) -m end -i login.aurominepos.com secure.aurominepos.com
+	#aurominepos.com
+	redirect code 301 location http://login.aurominepos.com/AMSRetail if host_aurominepos1 is_root
+use_backend aurominepos if host_aurominepos1
+	#
+	acl host_aurominepos	hdr(host) -m end -i www.aurominepos.com aurominepos.com
+	redirect code 301 location http://www.auromine.com if host_aurominepos is_root
+use_backend aurominepos if host_aurominepos
+	#
+	acl host_auromine-ams-sasbill	hdr(host) -m end -i login.auromine.in
+	acl host_auromine-ams-sasbill	hdr(host) -m end -i secure.auromine.in
+	redirect code 301 location http://login.auromine.in/in if host_auromine-ams-sasbill is_root
+use_backend auromine-ams-sasbill if host_auromine-ams-sasbill
+	#
+	# Auromine IN Wesites
+        acl host_auromine-in-mj3   hdr(host) -m end -i mjsalem.auromine.in
+        redirect code 301 location http://mjsalem.auromine.in/MudhraSalem if host_auromine-in-mj3 is_root
+use_backend auromine-mj3 if host_auromine-in-mj3
+	#
+        acl host_auromine-in-mj1   hdr(host) -m end -i mjcorporate.auromine.in
+        redirect code 301 location http://mjcorporate.auromine.in/MudhraJeweller if host_auromine-in-mj1 is_root
+use_backend auromine-mj1 if host_auromine-in-mj1
+	#
+        acl host_auromine-in-mj2   hdr(host) -m end -i mjattayapatti.auromine.in
+        redirect code 301 location http://mjattayapatti.auromine.in/MudhraAttayampatty if host_auromine-in-mj2 is_root
+use_backend auromine-mj2 if host_auromine-in-mj2
+	#
+	acl host_auromine-in	hdr(host) -m end -i www.auromine.in auromine.in
+	redirect code 301 location http://www.auromine.com if host_auromine-in is_root
+use_backend auromine-in if host_auromine-in !host_auromine-ams-sasbill
+	#
+	acl host_auromine-co-in	hdr(host) -m end -i www.auromine.co.in auromine.co.in
+	redirect code 301 location http://login.auromine.co.in/AMSRetail if host_auromine-co-in is_root
+use_backend auromine-co-in if host_auromine-co-in !host_auromine-ams-sasbill
+	#
+	acl host_auromine-cloud	hdr(host) -m end -i www.auromine.cloud auromine.cloud
+	redirect code 301 location http://login.auromine.cloud/POSRetail if host_auromine-cloud is_root
+use_backend auromine-cloud if host_auromine-cloud
+	#
+	# Auromine NET Websites
+	#acl is_root_QAS path -i /QSRRetail
+	#acl is_root_POS url_beg /POSRetail
+	#acl is_root_ASIM url_beg /ASIM
+	#
+        acl host_QSR_auromine-net    hdr(host) -m end -i auromine.net login.auromine.net admin.auromine.net
+        redirect code 301 location http://login.auromine.net/QSRRetail if host_QSR_auromine-net is_root
+use_backend QSR_auromine-net if host_QSR_auromine-net
+	#
+    ###
+    # All Server Monitoring URL's
+    #
+	#acl host_monit       hdr(host) -m end -i monit.auromine.com
+	acl host_auromine-monit	hdr(host) -m end -i monit.auromine.com
+	acl host_auromine-monit	hdr(host) -m end -i observium.auromine.com
+    #
+    # Acl's IP address to access servers.
+	#acl auromine_ips1 src 192.168.0.0/16 182.116.1.122/32
+    #to remove PUT,DELETE,TRACE from allow header of response
+http-response set-header Allow GET,POST,OPTIONS
+
+#use_backend kishanshop if host_kishanshop1 office_ip1
+#use_backend kishanshop if host_kishanshop !tomcat_path
+use_backend auromine-monit if host_auromine-monit
+default_backend bad_backend
+
+# letsencrypt Backend
+backend letsencrypt-backend
+        server letsencrypt 127.0.0.1:8888
+
+backend auromine-monit
+	# Observium-Monitoring-101.53.152.66 Server
+        option httpchk /
+        option httpclose # disable keep-alive
+        balance leastconn
+        option forwardfor
+        compression algo gzip
+        compression type text/html text/plain text/css text/javascript
+	server auromine-monit 172.16.106.44:80
+
+backend aurominepos
+	# AMS-Retail-SaaS_101.53.153.98 Server
+        option httpchk /index.html
+        option httpclose # disable keep-alive
+        balance leastconn
+        option forwardfor
+        compression algo gzip
+        compression type text/html text/plain text/css text/javascript
+        fullconn 10000
+        server aurominepos 172.16.107.197:8080 weight 50 maxconn 25 check  fall 5 inter 10000
+
+backend auromine-in
+	# Auromine-IN-101.53.153.186 Server
+        option httpchk /index.html
+        option httpclose # disable keep-alive
+        balance leastconn
+        option forwardfor
+        compression algo gzip
+        compression type text/html text/plain text/css text/javascript
+        fullconn 10000
+        server auromine-in 172.16.107.158:80 weight 50 maxconn 25 check  fall 5 inter 10000
+
+backend QSR_auromine-net
+        # QA_DEMO_APP_101.53.152.10 
+        option httpchk /index.html
+        option httpclose # disable keep-alive
+        balance leastconn
+        option forwardfor
+        compression algo gzip
+        compression type text/html text/plain text/css text/javascript
+        fullconn 10000
+        server QSR_auromine-net 172.16.103.106:8080 weight 50 maxconn 25 check  fall 5 inter 10000
+
+backend auromine-co-in
+	# QA_DEMO_APP_101.53.152.10 Server
+        option httpchk /index.html
+        option httpclose # disable keep-alive
+        balance leastconn
+        option forwardfor
+        compression algo gzip
+        compression type text/html text/plain text/css text/javascript
+        fullconn 10000
+        server auromine-co-in 172.16.103.106:8080 weight 50 maxconn 25 check  fall 5 inter 10000
+
+backend auromine-cloud
+	# KRDC-APP_101.53.153.117 Server
+        option httpchk /index.html
+        option httpclose # disable keep-alive
+        balance leastconn
+        option forwardfor
+        compression algo gzip
+        compression type text/html text/plain text/css text/javascript
+        fullconn 10000
+        server auromine-cloud 172.16.107.21:8080 weight 50 maxconn 25 check  fall 5 inter 10000
+
+backend auromine-mj1
+        # MJ-Cloud-DB-APP-101.53.142.163 Tomcat 1 Server
+        #option httpchk /
+        option httpclose # disable keep-alive
+        balance leastconn
+        option forwardfor
+        compression algo gzip
+        compression type text/html text/plain text/css text/javascript
+        fullconn 10000
+        server auromine-mj1 172.16.113.100:8080 weight 50 maxconn 25 check  fall 5 inter 10000
+		
+backend auromine-mj2
+        # MJ-Cloud-DB-APP-101.53.142.163 Tomcat 2 Server
+        #option httpchk /
+        option httpclose # disable keep-alive
+        balance leastconn
+        option forwardfor
+        compression algo gzip
+        compression type text/html text/plain text/css text/javascript
+        fullconn 10000
+        server auromine-mj2 172.16.113.100:8080 weight 50 maxconn 25 check  fall 5 inter 10000
+
+backend auromine-mj3
+        # MJ-Cloud-DB-APP-101.53.142.163 Tomcat 2 Server
+        #option httpchk / 
+        option httpclose # disable keep-alive
+        balance leastconn
+        option forwardfor
+        compression algo gzip
+        compression type text/html text/plain text/css text/javascript
+        fullconn 10000
+        server auromine-mj3 172.16.113.100:8080 weight 50 maxconn 25 check  fall 5 inter 10000
+
+backend auromine-ams-sasbill
+	# AMS-SaasBilling-101.53.156.120 Server
+        option httpchk /index.html
+        #mode http
+        option httpclose # disable keep-alive
+        balance leastconn
+        option forwardfor
+        compression algo gzip
+        compression type text/html text/plain text/css text/javascript
+        fullconn 10000
+        server auromine-ams-sasbill 172.16.107.166:8080 weight 50 maxconn 25 check  fall 5 inter 10000
+
+# Default Backend 
+listen bad_backend
+    mode http
+    bind 127.0.0.1:8000
+    errorfile 503 /tmp/bad_backend.http
+
+#backend kishanshop
+#        mode http
+#        option forwardfor
+#        option httpchk HEAD / HTTP/1.1\r\nHost:localhost
+        #server qa-demo-app1 172.16.109.38:8080 check
+#        server qa-demo-app1 172.16.103.106:8080 check
+#        http-request set-header X-Forwarded-Port %[dst_port]
+#        http-request add-header X-Forwarded-Proto https if { ssl_fc }
+
+listen stats 
+ bind *:8081
+ mode	http
+ log	global
+ maxconn	10
+ clitimeout	100s
+ srvtimeout	100s
+ contimeout	100s
+ timeout	queue	100s
+ 
+ acl	office	src	14.143.32.154/32	182.76.134.178/32	122.165.81.145/32
+ stats	enable
+ stats	hide-version
+ stats	refresh 30s
+ #stats	auth admin:password#123
+ stats	uri	/Haproxy?Status
+ # stats http-request deny unless office or home
+ stats	http-request	deny	unless	office
+ stats	admin	if	office
+
+[SSH] completed
+[SSH] exit-status: 0
+
+Finished: SUCCESS

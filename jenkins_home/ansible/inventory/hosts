@@ -1,0 +1,12 @@
+[all:vars]
+
+ansible_connection=ssh
+
+[test]
+test1 ansible_user=remote_user ansible_host=remote_host ansible_private_key_file=/var/jenkins_home/ansible/remote-user
+
+[lb]
+lb1 ansible_user=creative ansible_host=ubuntu_01 ansible_private_key_file=/var/jenkins_home/ansible/creative
+
+[web]
+web1 ansible_user=creative ansible_host=ubuntu_02 ansible_private_key_file=/var/jenkins_home/ansible/creative

@@ -1,0 +1,31 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<Tag plugin="workflow-support@3.4">
+  <node class="cps.n.StepStartNode" plugin="workflow-cps@2.80">
+    <parentIds>
+      <string>9</string>
+    </parentIds>
+    <id>10</id>
+    <descriptorId>org.jenkinsci.plugins.workflow.steps.EnvStep</descriptorId>
+  </node>
+  <actions>
+    <s.a.LogStorageAction/>
+    <cps.a.ArgumentsActionImpl plugin="workflow-cps@2.80">
+      <arguments>
+        <entry>
+          <string>overrides</string>
+          <list>
+            <string>GIT_BRANCH=origin/master</string>
+            <string>GIT_COMMIT=269645e3dabca7c47695f86e5f90a295a5c5f393</string>
+            <string>GIT_PREVIOUS_COMMIT=e8f55866aa44df1774a5c0a935c74c67dc3448b0</string>
+            <string>GIT_PREVIOUS_SUCCESSFUL_COMMIT=3ad8f8716cef623884080a34e369989bb62d04b7</string>
+            <string>GIT_URL=https://github.com/Raiyan444/pipeline-maven.git</string>
+          </list>
+        </entry>
+      </arguments>
+      <isUnmodifiedBySanitization>true</isUnmodifiedBySanitization>
+    </cps.a.ArgumentsActionImpl>
+    <wf.a.TimingAction plugin="workflow-api@2.40">
+      <startTime>1588074978005</startTime>
+    </wf.a.TimingAction>
+  </actions>
+</Tag>

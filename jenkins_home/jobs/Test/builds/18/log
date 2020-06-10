@@ -1,0 +1,14 @@
+Started by user [8mha:////4HkiS1MviISPR6CjuNGwPzskP+uj0Y/invJ1tNZsK7qgAAAAmB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAy+EgYe/dLi1CL9osTMysQ8AIpb9HvBAAAA[0mMOHAMED RAIYAN
+Running as SYSTEM
+Building on master in workspace /var/jenkins_home/workspace/Test
+[Test] $ /bin/sh -xe /tmp/jenkins3767567826697556070.sh
++ name=Raiyan
++ NAMEPARAM=name=Raiyan
++ echo name=Raiyan
+name=Raiyan
++ touch /tmp/output
++ echo name=Raiyan
++ cat /tmp/output
+name=Raiyan
+Triggering a new build of [8mha:////4BScEs23LM3/R59DgGT9/PcWFX5DfrV3k1yfzqeFXTpMAAAAoB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyBEgYx/az8JP2CxKLE3NSS1KLM4tR4kAAArpe0rssAAAA=[0mparameterise_job
+Finished: SUCCESS

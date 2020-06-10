@@ -4,16 +4,13 @@
   <description>Playing with ansible...</description>
   <keepDependencies>false</keepDependencies>
   <properties>
-    <hudson.model.ParametersDefinitionProperty>
-      <parameterDefinitions>
-        <hudson.model.StringParameterDefinition>
-          <name>Ansible</name>
-          <description></description>
-          <defaultValue>Hello World</defaultValue>
-          <trim>false</trim>
-        </hudson.model.StringParameterDefinition>
-      </parameterDefinitions>
-    </hudson.model.ParametersDefinitionProperty>
+    <it.dockins.dockerslaves.spec.ContainerSetDefinition plugin="docker-slaves@1.0.7">
+      <buildHostImage class="it.dockins.dockerslaves.spec.ImageIdContainerDefinition">
+        <image>ansible</image>
+        <forcePull>false</forcePull>
+      </buildHostImage>
+      <sideContainers class="empty-list"/>
+    </it.dockins.dockerslaves.spec.ContainerSetDefinition>
   </properties>
   <scm class="hudson.scm.NullSCM"/>
   <canRoam>true</canRoam>
@@ -24,7 +21,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <org.jenkinsci.plugins.ansible.AnsiblePlaybookBuilder plugin="ansible@1.0">
-      <playbook>/var/jenkins_home/ansible/play.yml</playbook>
+      <playbook>/var/jenkins_home/ansible/play-01.yml</playbook>
       <inventory class="org.jenkinsci.plugins.ansible.InventoryPath">
         <path>/var/jenkins_home/ansible/hosts</path>
       </inventory>

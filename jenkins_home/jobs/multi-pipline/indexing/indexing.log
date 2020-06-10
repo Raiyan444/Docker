@@ -1,0 +1,30 @@
+Started by user [8mha:////4HkiS1MviISPR6CjuNGwPzskP+uj0Y/invJ1tNZsK7qgAAAAmB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAy+EgYe/dLi1CL9osTMysQ8AIpb9HvBAAAA[0mMOHAMED RAIYAN
+[Thu May 28 10:46:51 UTC 2020] Starting branch indexing...
+[8mha:////4PNnbx3Fv+75pqmzKKQr6PefizpV5zHreyyCig18vrfuAAAAhB+LCAAAAAAAAP9b85aBtbiIwSa/KF0vKzUvOzOvODlTryCnNB3I0kvPLMkoTYpPKkrMS86IL84vLUpO1XPPLPEoTXLOzyvOz0n1yy9JZYAARiYGRi8GzpLM3NTiksTcgooiBqmM0pTi/Dy9ZIhiPayaGCoKgHRR1JNATgAr0x5yjgAAAA==[0mConnecting to https://api.github.com with no credentials, anonymous access
+[8mha:////4H7n//yfxpkj2r6Obm4Ko2szlFDPGRuQP4gPkd6fs1YZAAAAhB+LCAAAAAAAAP9b85aBtbiIwSa/KF0vKzUvOzOvODlTryCnNB3I0kvPLMkoTYpPKkrMS86IL84vLUpO1XPPLPEoTXLOzyvOz0n1yy9JZYAARiYGRi8GzpLM3NTiksTcgooiBqmM0pTi/Dy9ZIhiPayaGCoKgHRR1JOgTgDIA4u0jgAAAA==[0mGitHub API Usage: Current quota has 42 remaining (14 under budget). Next quota of 60 in 20 min
+Examining [8mha:////4BuqJTRJPecud6dr5v1hmfzDogOifnejZrGNmI9hSwbFAAAAqh+LCAAAAAAAAP9b85aBtbiIQSajNKU4P08vOT+vOD8nVc+jsiC1KCczL9svvyTVzHb1RttJBUeZGJg8GdhyUvPSSzJ8GJhLi3JKGIR8shLLEvVzEvPS9YNLijLz0q0rihik0IxzhtAgwxgggJGJgaGiAMiQKGHQzigpKSi20tdPzyzJKE0C6srVD0rMrEzMMzEx0S/ILEgFuiRVNzexLDUPAG6dXqewAAAA[0mRaiyan444/pipeline-maven
+
+  Checking branches...
+[8mha:////4B+T6JmcRicalbQ0gbalu7bKCo2uddZJ6c1KrFYQh7T9AAAAhB+LCAAAAAAAAP9b85aBtbiIwSa/KF0vKzUvOzOvODlTryCnNB3I0kvPLMkoTYpPKkrMS86IL84vLUpO1XPPLPEoTXLOzyvOz0n1yy9JZYAARiYGRi8GzpLM3NTiksTcgooiBqmM0pTi/Dy9ZIhiPayaGCoKgHRR1JOgGQA6IzvejgAAAA==[0mGitHub API Usage: Current quota has 42 remaining (14 under budget). Next quota of 60 in 20 min
+
+  Getting remote branches...
+
+    Checking branch [8mha:////4Lj01cpr7B5/418okDXS68ZEf14bMi1OypwlRXxngc5IAAAAtB+LCAAAAAAAAP9djrENwjAQRY8gMgAlYgVyTQQSKBUNSBEFTGDgZBsc27IvUbIGa0DDEIzDDgTR8Zv/m/f0H28YxQBTVZ+js9nJ2egMZZvOUzDaXneOaV7cn8XNvxJItpAaspJVCcM6GIZxeRGNQCOsxAMHbeWqDTD5061//ZXBL4MEoPX9SBkWitnHJaLUrOpjT1W4F7oTNs9z9NpT/4RmlWjIIgcirERkCh9wHvyYvAAAAA==[0mmaster
+[8mha:////4ES8/+N9xJUa+Aqw0pf/wsVby/RYDSpcpNNJuNb7eOWAAAAAhB+LCAAAAAAAAP9b85aBtbiIwSa/KF0vKzUvOzOvODlTryCnNB3I0kvPLMkoTYpPKkrMS86IL84vLUpO1XPPLPEoTXLOzyvOz0n1yy9JZYAARiYGRi8GzpLM3NTiksTcgooiBqmM0pTi/Dy9ZIhiPayaGCoKgHRR1JPgMwCWhyarjgAAAA==[0mGitHub API Usage: Current quota has 42 remaining (14 under budget). Next quota of 60 in 20 min
+
+  Getting remote pull requests...
+      ‘Jenkinsfile’ found
+    Met criteria
+Scheduled build for branch: master
+[8mha:////4Gaejq5YcTbOgp3aBXNOci0Qb62q2HOqiIH6dmKvTlErAAAAhB+LCAAAAAAAAP9b85aBtbiIwSa/KF0vKzUvOzOvODlTryCnNB3I0kvPLMkoTYpPKkrMS86IL84vLUpO1XPPLPEoTXLOzyvOz0n1yy9JZYAARiYGRi8GzpLM3NTiksTcgooiBqmM0pTi/Dy9ZIhiPayaGCoKgHRR1JOwQgDivIFjjgAAAA==[0mGitHub API Usage: Current quota has 38 remaining (10 under budget). Next quota of 60 in 20 min
+
+  1 branches were processed
+
+  Checking pull-requests...
+
+  0 pull requests were processed
+
+Finished examining Raiyan444/pipeline-maven
+
+[Thu May 28 10:46:53 UTC 2020] Finished branch indexing. Indexing took 1.3 sec
+Finished: SUCCESS

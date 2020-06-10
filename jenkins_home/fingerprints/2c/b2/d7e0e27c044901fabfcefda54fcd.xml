@@ -6,7 +6,11 @@
   <usages>
     <entry>
       <string>Mysql-backup</string>
-      <ranges>2-15</ranges>
+      <ranges>2-16</ranges>
+    </entry>
+    <entry>
+      <string>jenkinfile</string>
+      <ranges>6-7,9-11,13-25,28-38,41</ranges>
     </entry>
   </usages>
   <facets/>

@@ -1,0 +1,35 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<slave>
+  <temporaryOfflineCause class="hudson.slaves.OfflineCause$UserCause">
+    <timestamp>1588837961289</timestamp>
+    <description>
+      <holder>
+        <owner>hudson.slaves.Messages</owner>
+      </holder>
+      <key>SlaveComputer.DisconnectedBy</key>
+      <args>
+        <string>raiyan</string>
+        <string></string>
+      </args>
+    </description>
+    <userId>raiyan</userId>
+  </temporaryOfflineCause>
+  <name>Ubuntu_01</name>
+  <description></description>
+  <remoteFS>/tmp/</remoteFS>
+  <numExecutors>1</numExecutors>
+  <mode>NORMAL</mode>
+  <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
+  <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.31.1">
+    <host>Ubuntu_01</host>
+    <port>22</port>
+    <credentialsId>creative-ssh</credentialsId>
+    <launchTimeoutSeconds>60</launchTimeoutSeconds>
+    <maxNumRetries>10</maxNumRetries>
+    <retryWaitTime>15</retryWaitTime>
+    <sshHostKeyVerificationStrategy class="hudson.plugins.sshslaves.verifiers.KnownHostsFileKeyVerificationStrategy"/>
+    <tcpNoDelay>true</tcpNoDelay>
+  </launcher>
+  <label>Ubuntu_01</label>
+  <nodeProperties/>
+</slave>

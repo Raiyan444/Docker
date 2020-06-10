@@ -1,0 +1,19 @@
+commit e8f55866aa44df1774a5c0a935c74c67dc3448b0
+tree c2e542bb7f35f684941b0e755790e1f76499e745
+parent bd3020af1ab20d6e2e9338e5a6400bcf8ab38264
+author MOHAMED RAIYAN <speak2raiyan@gmail.com> 2020-04-28 17:17:24 +0530
+committer GitHub <noreply@github.com> 2020-04-28 17:17:24 +0530
+
+    Update jenkinsfile
+
+:100644 100644 837eb05371d2502afbfa0ef23716cace19edec89 03caf30a2f0e3cdb257005fea0c7dcc3f57864ed M	jenkinsfile
+commit bd3020af1ab20d6e2e9338e5a6400bcf8ab38264
+tree f7044126ce5243851d568de62a8c5a6da76bacbc
+parent 3ad8f8716cef623884080a34e369989bb62d04b7
+author Ubuntu <ubuntu@ip-192-168-0-30.ap-southeast-1.compute.internal> 2020-04-28 17:15:41 +0530
+committer Ubuntu <ubuntu@ip-192-168-0-30.ap-southeast-1.compute.internal> 2020-04-28 17:15:41 +0530
+
+    updated script
+
+
+:100755 100755 061775e2d8dee590508530d9616ac1c989fc8bf1 1b6471899ef8cfe241e2ff2f0e5aed50df149518 M	jenkins/build/build.sh

@@ -2,6 +2,8 @@
 <scriptApproval plugin="script-security@1.71">
   <approvedScriptHashes>
     <string>017d0db438428731cd600b6ebda805065433520f</string>
+    <string>4711ba749a9fff898e0be05ef48f1e96d8f7ba43</string>
+    <string>c42f4cd2a69cc6d3b0139947a667971c5e37d733</string>
   </approvedScriptHashes>
   <approvedSignatures/>
   <aclApprovedSignatures/>

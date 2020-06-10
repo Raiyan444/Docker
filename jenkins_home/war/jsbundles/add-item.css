@@ -182,27 +182,6 @@
   right: 0;
   z-index: 2;
 }
-#jenkins .jenkins-config table .bottom-sticker .yui-button.primary button,
-#jenkins .jenkins-config table #bottom-sticker .yui-button.primary button {
-  background: #478;
-  border-color: #356;
-}
-#jenkins .jenkins-config table .bottom-sticker .yui-button.yui-button-disabled button,
-#jenkins .jenkins-config table #bottom-sticker .yui-button.yui-button-disabled button {
-  background: #eee;
-  border-color: #ccc;
-  color: #ccc;
-}
-#jenkins .jenkins-config table .bottom-sticker .yui-button,
-#jenkins .jenkins-config table #bottom-sticker .yui-button {
-  margin-right: 10px;
-}
-#jenkins .jenkins-config table .bottom-sticker .yui-button button,
-#jenkins .jenkins-config table #bottom-sticker .yui-button button {
-  padding: 5px 20px;
-  background: #cde;
-  border-color: #69c;
-}
 #jenkins .jenkins-config table .section-header {
   margin: 30px 0px 5px -10px;
   font-size: 1.25rem;
@@ -233,7 +212,6 @@
 #jenkins .jenkins-config table td textarea.setting-input {
   display: block;
 }
-#jenkins .jenkins-config table td .yui-button button,
 #jenkins .jenkins-config table td input[type='email'].setting-input,
 #jenkins .jenkins-config table td input[type='password'].setting-input,
 #jenkins .jenkins-config table td input[type='text'].setting-input {
@@ -243,13 +221,6 @@
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-}
-#jenkins .jenkins-config table td .yui-button button {
-  padding: 0 10px;
-  box-sizing: content-box;
-}
-#jenkins .jenkins-config table td .yui-button button.hetero-list-add {
-  padding-right: 25px;
 }
 #jenkins .jenkins-config table td select:not([multiple]) {
   height: 2.25em;
@@ -349,6 +320,8 @@
   line-height: 12px !important;
   display: inline-block;
   font-size: 8px;
+  min-width: 0;
+  min-height: 0;
 }
 #jenkins .jenkins-config table .repeatable-delete button:focus,
 #jenkins .jenkins-config table .repeatable-delete button:hover {
@@ -418,35 +391,6 @@
   width: auto;
   min-width: auto;
   margin-right: 0px;
-}
-#add-item-panel form > .footer .btn-decorator button[type=submit] {
-  padding: 5px 20px;
-  background-color: #ccddee;
-  border-color: #6699cc;
-  border-radius: 3px;
-  border-width: 1px;
-  border-style: solid;
-  color: #505050;
-  font-weight: bold;
-  font-size: 0.875rem;
-  line-height: 27px;
-}
-#add-item-panel form > .footer .btn-decorator button[type=submit]:hover:not(.disabled),
-#add-item-panel form > .footer .btn-decorator button[type=submit]:focus:not(.disabled) {
-  background-color: #447788;
-  border-color: #335566;
-  color: #eeeeee;
-  cursor: pointer;
-}
-#add-item-panel form > .footer .btn-decorator button[type=submit]:active:not(.disabled) {
-  box-shadow: inset 0px 1px 6px 2px #1b2b33;
-}
-#add-item-panel form > .footer .btn-decorator button[type=submit].disabled {
-  background-color: #ccc;
-  border-color: #aaa;
-  color: #8c8c8c;
-  cursor: auto;
-  opacity: 0.75;
 }
 #add-item-panel .add-item-name {
   padding: 20px;

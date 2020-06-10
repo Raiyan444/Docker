@@ -1,0 +1,17 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<fingerprint>
+  <timestamp>2020-04-28 09:04:22.537 UTC</timestamp>
+  <md5sum>953f64909bbe11fe693774dfd6e80f79</md5sum>
+  <fileName>Credential id=registry-pass name=registry-pass</fileName>
+  <usages>
+    <entry>
+      <string>multi-pipline/master</string>
+      <ranges>1</ranges>
+    </entry>
+    <entry>
+      <string>pipeline-docker</string>
+      <ranges>29-40</ranges>
+    </entry>
+  </usages>
+  <facets/>
+</fingerprint>

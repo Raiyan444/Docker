@@ -1,0 +1,11 @@
+Started on Apr 28, 2020 12:48:01 PM
+Started by event from 140.82.115.249 ⇒ http://cloudgeek.co.in:8080/github-webhook/ on Tue Apr 28 12:48:01 UTC 2020
+Using strategy: Default
+[poll] Last Built Revision: Revision 269645e3dabca7c47695f86e5f90a295a5c5f393 (refs/remotes/origin/master)
+No credentials specified
+ > git --version # timeout=10
+ > git ls-remote -h -- https://github.com/Raiyan444/pipeline-maven.git # timeout=10
+Found 1 remote heads on https://github.com/Raiyan444/pipeline-maven.git
+[poll] Latest remote head revision on refs/heads/master is: 270b0f8fa53ef71610fec890f7238b76d52c3fe6
+Done. Took 0.87 sec
+Changes found
